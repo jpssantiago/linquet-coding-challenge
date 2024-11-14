@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie'
 
 import { User } from "@/models/user"
+import { env } from '@/lib/env'
 
 export type SignUpResponse = {
     token?: string
@@ -21,7 +22,7 @@ export type AuthenticateResponse = {
 export const AuthService = {
     async signUp(email: string, password: string, name: string): Promise<SignUpResponse> {
         try {
-            const response = await fetch("http://localhost:3001/api/v1/auth/sign-up", {
+            const response = await fetch(`${env.NEXT_PUBLIC_AUTH_API_URL}/api/v1/auth/sign-up`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -48,7 +49,7 @@ export const AuthService = {
 
     async signIn(email: string, password: string): Promise<SignInResponse> {
         try {
-            const response = await fetch("http://localhost:3001/api/v1/auth/sign-in", {
+            const response = await fetch(`${env.NEXT_PUBLIC_AUTH_API_URL}/api/v1/auth/sign-in`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -74,7 +75,7 @@ export const AuthService = {
 
     async authenticate(): Promise<AuthenticateResponse> {
         try {
-            const response = await fetch("http://localhost:3001/api/v1/auth/authenticate", {
+            const response = await fetch(`${env.NEXT_PUBLIC_AUTH_API_URL}/api/v1/auth/authenticate`, {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${Cookies.get("lnqt-auth-tkn")}`
