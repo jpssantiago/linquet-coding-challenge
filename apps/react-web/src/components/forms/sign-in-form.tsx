@@ -94,7 +94,7 @@ export function SignInForm() {
                     </LoadingButton>
 
                     <div className="flex justify-center items-center space-x-1 text-sm">
-                        <p>Don't have an account?</p>
+                        <p>Don&apos;t have an account?</p>
                         <UnderlineLink href="/auth/sign-up">Create one.</UnderlineLink>
                     </div>
                 </form>

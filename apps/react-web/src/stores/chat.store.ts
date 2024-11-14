@@ -22,11 +22,11 @@ export const useChatStore = create<ChatStoreState & ChatStoreActions>()((set, ge
         if (response.chats) {
             set({ chats: response.chats })
 
-            for (let chat of response.chats) {
+            response.chats.forEach(chat => {
                 if (chat.user.id == get().activeChat?.user.id) {
                     set({ activeChat: chat })
                 }
-            }
+            })
 
             return response.chats
         }
