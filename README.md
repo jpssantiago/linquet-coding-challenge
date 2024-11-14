@@ -25,4 +25,10 @@ Inside the folder apps/rn_app:
 
 Inside the folder apps/react-web:  
     - Install the dependencies `pnpm i`  
+    - Set up the environment variables on `.env.local` with the deployed or local urls:  
+        > `NEXT_PUBLIC_AUTH_API_URL=https://api-auth-linquet.joaosantiago.com.br`  
+        > `NEXT_PUBLIC_MSG_API_URL=https://api-msg-linquet.joaosantiago.com.br`  
+        or  
+        > `NEXT_PUBLIC_AUTH_API_URL=http://localhost:3001`    
+        > `NEXT_PUBLIC_MSG_API_URL=http://127.0.0.1:5001`  
     - Run the webapp `pnpm dev`  
